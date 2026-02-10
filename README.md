@@ -1,7 +1,10 @@
-# Tictactoe
-Final Project for COP 2006 Programming 1
+# Air Tic-Tac-Toe
+a high-performance Human-Computer Interaction (HCI) project that utilizes 
+machine learning to turn any webcam into a gesture-based input device.
 
-This project goal was to develop core concepts in Programing language C++, adding a windows API framework in vscode.
-
-# Quickstart
-g++ hello_gui.cpp -o hello_gui.exe -mwindows
+# Tech Stack
+~ Vanilla JavaScript
+~ TensorFlow.js backend
+~ HTML5 Canvas API
+~ Tailwind CSS
+~ MediaPipe Camera
