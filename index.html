@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Finger Tic-Tac-Toe</title>
+    <title>AI Finger Tic-Tac-Toe - Large Grid</title>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
 
     <div class="mb-4 text-center">
-        <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-            Air Tic-Tac-Toe
+        <h1 class="text-4xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
+            AIR TIC-TAC-TOE
         </h1>
         <div class="flex gap-4 mt-2 justify-center">
-             <div id="mode-pve" class="status-pill border-blue-500 text-blue-400 opacity-50 cursor-pointer">VS COMPUTER</div>
-             <div id="mode-pvp" class="status-pill border-emerald-500 text-emerald-400 cursor-pointer">VS PLAYER</div>
+             <div id="mode-pve" class="status-pill border-blue-500 text-blue-400 transition-opacity">VS CPU</div>
+             <div id="mode-pvp" class="status-pill border-emerald-500 text-emerald-400 transition-opacity">VS PLAYER</div>
         </div>
     </div>
 
-    <div class="canvas-container">
+    <div class="canvas-container" id="game-area">
         <video id="input_video" style="display:none"></video>
-        <canvas id="output_canvas" width="640" height="480"></canvas>
+        <!-- Internal resolution increased to 800x800 for sharpness -->
+        <canvas id="output_canvas" width="800" height="800"></canvas>
         
         <div id="ui-overlay">
             <div class="flex justify-between items-start">
-                <div id="player-turn" class="status-pill text-blue-400">TURN: X</div>
-                <div id="game-status" class="status-pill text-white">READY</div>
+                <div id="player-turn" class="status-pill text-blue-400 shadow-lg">TURN: X</div>
+                <div id="game-status" class="status-pill text-white shadow-lg">READY</div>
             </div>
             
-            <div class="flex justify-center gap-4">
-                <button id="reset-btn" class="pointer-events-auto bg-white text-slate-900 px-6 py-2 rounded-lg font-bold hover:scale-105 transition-all">
-                    RESET GAME
+            <div class="flex justify-center gap-6">
+                <button id="reset-btn" class="game-btn bg-white text-slate-900 px-8 py-3 rounded-2xl font-black shadow-xl">
+                    RESET
                 </button>
-                <button id="toggle-mode-btn" class="pointer-events-auto bg-slate-800 text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-700 transition-all">
-                    SWITCH MODE
+                <button id="toggle-mode-btn" class="game-btn bg-slate-800 text-white px-8 py-3 rounded-2xl font-black shadow-xl border-2 border-slate-700">
+                    MODE
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="mt-6 text-center opacity-60">
-        <p class="text-xs uppercase tracking-widest text-slate-400 mb-1">Navigation</p>
-        <p class="text-sm">Hover finger over buttons or grid to interact</p>
+    <div class="mt-4 text-slate-500 font-medium animate-pulse">
+        Hover finger to select
     </div>
 
 </body>
