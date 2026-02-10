@@ -1,0 +1,52 @@
+
+body {
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.canvas-container {
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 4px solid #1e293b;
+}
+canvas {
+    transform: scaleX(-1); /* Mirror effect */
+}
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    z-index: 10;
+}
+.status-pill {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 0.875rem;
+}
+/* Virtual Button Highlight */
+.v-btn-active {
+    outline: 3px solid #60a5fa !important;
+    background: #1e293b !important;
+    color: #60a5fa !important;
+}
